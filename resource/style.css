@@ -461,7 +461,7 @@ body {
   }
   
   .navbar-b.navbar-trans .nav-link, .navbar-b.navbar-reduce .nav-link {
-    color: #fff;
+    /* color: #fff; */
     text-transform: uppercase;
     font-weight: 600;
   }
@@ -551,7 +551,7 @@ body {
   }
   
   .navbar-b .navbar-brand {
-    color: #fff;
+    /* color: #fff; */
     font-size: 1.6rem;
     font-weight: 600;
   }
