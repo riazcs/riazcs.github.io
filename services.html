@@ -105,44 +105,51 @@
 
       /* Services Section */
       .service-card {
-        border: none;
         border-radius: 10px;
         overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         transition: all 0.3s ease;
-        height: 100%;
+        background: white;
       }
 
       .service-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
       }
 
-      .service-img {
+      .service-thumb {
         height: 200px;
+        overflow: hidden;
+      }
+
+      .service-thumb img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         transition: transform 0.5s ease;
       }
 
-      .service-card:hover .service-img {
+      .service-card:hover .service-thumb img {
         transform: scale(1.05);
       }
 
-      .service-body {
+      .service-content {
         padding: 25px;
-        border-top: 5px solid var(--primary-color);
       }
 
-      .tech-badge {
-        display: inline-block;
-        background: var(--light-color);
-        padding: 5px 10px;
-        border-radius: 20px;
-        margin: 3px;
+      .tech-stack .badge {
+        font-weight: 500;
+        padding: 6px 12px;
+        border-radius: 6px;
         font-size: 0.8rem;
-        color: var(--dark-color);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       }
 
+      @media (max-width: 768px) {
+        .service-thumb {
+          height: 180px;
+        }
+      }
       /* Quote Section */
       .quote-section {
         background: linear-gradient(
@@ -346,114 +353,284 @@
         <nav aria-label="breadcrumb" class="d-flex justify-content-center">
           <ol class="breadcrumb animate__animated animate__fadeInUp">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item active text-white" aria-current="page">Services</li>
+            <li class="breadcrumb-item active text-white" aria-current="page">
+              Services
+            </li>
           </ol>
         </nav>
       </div>
     </div>
 
     <!-- Services Section -->
+    <!-- Services Section -->
+    <!-- Services Section with Thumbnail Images -->
     <section class="py-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="display-5 fw-bold">Professional IT Solutions</h2>
+          <h2 class="display-5 fw-bold">Our Professional Services</h2>
           <p class="lead">
-            We deliver cutting-edge technology solutions tailored to your
-            business needs
+            Comprehensive digital solutions for your business needs
           </p>
         </div>
 
         <div class="row g-4">
+          <!-- Web Development -->
           <div class="col-lg-4 col-md-6">
-            <div
-              class="service-card animate__animated animate__fadeInUp"
-              data-wow-delay="0.1s"
-            >
-              <img
-                src="img/web-dev.jpg"
-                class="service-img img-fluid w-100"
-                alt="Web Development"
-              />
-              <div class="service-body">
-                <h4 class="mb-3">Web Development</h4>
-                <p>
+            <div class="service-card h-100">
+              <div class="service-thumb">
+                <img
+                  src="img/web-dev.jpg"
+                  alt="Web Development"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-content p-4">
+                <h3 class="h4 mb-3">Web Development</h3>
+                <p class="mb-4">
                   Custom web applications built with modern technologies for
                   optimal performance and user experience.
                 </p>
-                <div class="mt-4">
-                  <h6 class="text-primary">Technologies:</h6>
-                  <div class="d-flex flex-wrap mt-2">
-                    <span class="tech-badge">HTML5</span>
-                    <span class="tech-badge">CSS3</span>
-                    <span class="tech-badge">Vue.js</span>
-                    <span class="tech-badge">Nuxt.js</span>
-                    <span class="tech-badge">React</span>
-                    <span class="tech-badge">Next.js</span>
-                    <span class="tech-badge">Laravel</span>
-                    <span class="tech-badge">Node.js</span>
-                    <span class="tech-badge">MySQL</span>
-                    <span class="tech-badge">MongoDB</span>
+                <div class="tech-stack">
+                  <h6 class="text-primary mb-2">Technologies:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark">Laravel</span>
+                    <span class="badge bg-light text-dark">Vue.js</span>
+                    <span class="badge bg-light text-dark">React</span>
+                    <span class="badge bg-light text-dark">Node.js</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Mobile Development -->
           <div class="col-lg-4 col-md-6">
-            <div
-              class="service-card animate__animated animate__fadeInUp"
-              data-wow-delay="0.3s"
-            >
-              <img
-                src="img/mobile_dev.png"
-                class="service-img img-fluid w-100"
-                alt="Mobile Development"
-              />
-              <div class="service-body">
-                <h4 class="mb-3">Mobile Development</h4>
-                <p>
-                  Cross-platform mobile applications that deliver native-like
-                  performance across iOS and Android devices.
+            <div class="service-card h-100">
+              <div class="service-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Mobile Development"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-content p-4">
+                <h3 class="h4 mb-3">Mobile Development</h3>
+                <p class="mb-4">
+                  Cross-platform mobile applications for iOS and Android with
+                  native-like performance.
                 </p>
-                <div class="mt-4">
-                  <h6 class="text-primary">Technologies:</h6>
-                  <div class="d-flex flex-wrap mt-2">
-                    <span class="tech-badge">Flutter</span>
-                    <span class="tech-badge">React Native</span>
-                    <span class="tech-badge">Dart</span>
-                    <span class="tech-badge">Firebase</span>
-                    <span class="tech-badge">REST API</span>
+                <div class="tech-stack">
+                  <h6 class="text-primary mb-2">Technologies:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark">Flutter</span>
+                    <span class="badge bg-light text-dark">React Native</span>
+                    <span class="badge bg-light text-dark">Firebase</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- E-commerce -->
           <div class="col-lg-4 col-md-6">
-            <div
-              class="service-card animate__animated animate__fadeInUp"
-              data-wow-delay="0.5s"
-            >
-              <img
-                src="img/ecommerce.jpg"
-                class="service-img img-fluid w-100"
-                alt="E-commerce Solution"
-              />
-              <div class="service-body">
-                <h4 class="mb-3">E-commerce Solutions</h4>
-                <p>
-                  Complete online store solutions with secure payment gateways,
-                  inventory management, and analytics.
+            <div class="service-card h-100">
+              <div class="service-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="E-commerce Solutions"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-content p-4">
+                <h3 class="h4 mb-3">E-commerce Solutions</h3>
+                <p class="mb-4">
+                  Complete online store solutions with payment gateways and
+                  inventory management.
                 </p>
-                <div class="mt-4">
-                  <h6 class="text-primary">Features:</h6>
-                  <div class="d-flex flex-wrap mt-2">
-                    <span class="tech-badge">Product Management</span>
-                    <span class="tech-badge">Payment Gateway</span>
-                    <span class="tech-badge">SEO Optimized</span>
-                    <span class="tech-badge">Responsive Design</span>
-                    <span class="tech-badge">Admin Dashboard</span>
-                    <span class="tech-badge">Multi-vendor</span>
+                <div class="tech-stack">
+                  <h6 class="text-primary mb-2">Features:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark">Multi-vendor</span>
+                    <span class="badge bg-light text-dark"
+                      >Payment Gateway</span
+                    >
+                    <span class="badge bg-light text-dark">Inventory</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- POS System -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card h-100">
+              <div class="service-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="POS System"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-content p-4">
+                <h3 class="h4 mb-3">POS System</h3>
+                <p class="mb-4">
+                  Complete point of sale solutions for retail businesses with
+                  inventory and sales tracking.
+                </p>
+                <div class="tech-stack">
+                  <h6 class="text-primary mb-2">Features:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark">Barcode</span>
+                    <span class="badge bg-light text-dark">Inventory</span>
+                    <span class="badge bg-light text-dark">Reporting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LMS -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card h-100">
+              <div class="service-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Learning Management"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-content p-4">
+                <h3 class="h4 mb-3">Learning Management</h3>
+                <p class="mb-4">
+                  Comprehensive LMS platforms for educational institutions and
+                  corporate training.
+                </p>
+                <div class="tech-stack">
+                  <h6 class="text-primary mb-2">Features:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark">Course Mgmt</span>
+                    <span class="badge bg-light text-dark">Quizzes</span>
+                    <span class="badge bg-light text-dark"
+                      >Progress Tracking</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- School ERP -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card h-100">
+              <div class="service-thumb">
+                <img
+                  src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="School ERP"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-content p-4">
+                <h3 class="h4 mb-3">School ERP</h3>
+                <p class="mb-4">
+                  End-to-end school management systems for administration,
+                  academics, and operations.
+                </p>
+                <div class="tech-stack">
+                  <h6 class="text-primary mb-2">Modules:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark">Admission</span>
+                    <span class="badge bg-light text-dark">Attendance</span>
+                    <span class="badge bg-light text-dark">Timetable</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Accounting Software -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card h-100">
+              <div class="service-thumb">
+                <img
+                  src="img/Accounting_software.png"
+                  alt="Accounting Software"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-content p-4">
+                <h3 class="h4 mb-3">Accounting Software</h3>
+                <p class="mb-4">
+                  Complete financial management solutions for businesses of all
+                  sizes.
+                </p>
+                <div class="tech-stack">
+                  <h6 class="text-primary mb-2">Features:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark">Invoicing</span>
+                    <span class="badge bg-light text-dark"
+                      >Expense Tracking</span
+                    >
+                    <span class="badge bg-light text-dark">Tax Management</span>
+                    <span class="badge bg-light text-dark">Reporting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- HRM -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card h-100">
+              <div class="service-thumb">
+                <img
+                  src="img/HR_soft.png"
+                  alt="HR Management Software"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-content p-4">
+                <h3 class="h4 mb-3">HR Management</h3>
+                <p class="mb-4">
+                  Comprehensive human resource management systems for employee
+                  lifecycle.
+                </p>
+                <div class="tech-stack">
+                  <h6 class="text-primary mb-2">Modules:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark">Payroll</span>
+                    <span class="badge bg-light text-dark">Leave Mgmt</span>
+                    <span class="badge bg-light text-dark">Recruitment</span>
+                    <span class="badge bg-light text-dark">Performance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Custom Software -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card h-100">
+              <div class="service-thumb">
+                <img
+                  src="img/custom_soft.jpeg"
+                  alt="Custom Software"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="service-content p-4">
+                <h3 class="h4 mb-3">Custom Software</h3>
+                <p class="mb-4">
+                  Bespoke software solutions tailored to your specific business
+                  requirements.
+                </p>
+                <div class="tech-stack">
+                  <h6 class="text-primary mb-2">Capabilities:</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-light text-dark"
+                      >Workflow Automation</span
+                    >
+                    <span class="badge bg-light text-dark">Integration</span>
+                    <span class="badge bg-light text-dark"
+                      >Custom Reporting</span
+                    >
                   </div>
                 </div>
               </div>
