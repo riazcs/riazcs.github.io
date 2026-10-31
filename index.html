@@ -1,949 +1,2927 @@
-<!DOCTYPE html>
-<!-- saved from url=(0041)# -->
-<html lang="en" data-lt-installed="true">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md. Riazul Islam — Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Md. Riazul Islam — Assistant Manager (Software Development) at Textile Today Innovation Hub. Full Stack Developer specialising in Laravel, Vue.js, Flutter and AI Automation."
+    />
+    <link rel="icon" href="my_pic.jpg" />
+    <link rel="apple-touch-icon" href="my_pic.jpg" />
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>
+      /* ========== 1. TOKENS ========== */
+      :root {
+        --bg: #06070c;
+        --bg-soft: #0a0c14;
+        --card: rgba(255, 255, 255, 0.035);
+        --card-2: rgba(255, 255, 255, 0.06);
+        --stroke: rgba(255, 255, 255, 0.09);
+        --stroke-2: rgba(255, 255, 255, 0.16);
+        --text: #e9ecf5;
+        --muted: #98a0b8;
+        --violet: #8b5cf6;
+        --cyan: #22d3ee;
+        --pink: #f472b6;
+        --grad: linear-gradient(120deg, #8b5cf6 0%, #22d3ee 100%);
+        --grad-soft: linear-gradient(
+          120deg,
+          rgba(139, 92, 246, 0.18),
+          rgba(34, 211, 238, 0.14)
+        );
+        --radius: 22px;
+        --max: 1180px;
+        --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
 
-  <title>Md.Riazul Islam</title>
-  <meta content="" name="descriptison">
-  <meta content="" name="keywords">
+      /* ========== 2. RESET / BASE ========== */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 96px;
+      }
+      body {
+        font-family:
+          "Inter",
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            620px circle at 12% 6%,
+            rgba(139, 92, 246, 0.2),
+            transparent 62%
+          ),
+          radial-gradient(
+            760px circle at 88% 14%,
+            rgba(34, 211, 238, 0.13),
+            transparent 62%
+          ),
+          radial-gradient(
+            900px circle at 50% 108%,
+            rgba(244, 114, 182, 0.1),
+            transparent 62%
+          );
+      }
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0.35;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.028) 1px,
+            transparent 1px
+          );
+        background-size: 64px 64px;
+        mask-image: radial-gradient(
+          ellipse at 50% 0%,
+          #000 20%,
+          transparent 78%
+        );
+        -webkit-mask-image: radial-gradient(
+          ellipse at 50% 0%,
+          #000 20%,
+          transparent 78%
+        );
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: inherit;
+      }
 
-  <!-- Favicons -->
-  <link href="my_pic.jpg" rel="icon">
-  <link href="my_pic.jpg" rel="apple-touch-icon">
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Sora", sans-serif;
+        line-height: 1.18;
+        letter-spacing: -0.02em;
+        font-weight: 700;
+      }
+      ::selection {
+        background: rgba(139, 92, 246, 0.4);
+        color: #fff;
+      }
 
-  <!-- Vendor CSS Files -->
-  <link href="./resource/bootstrap.min.css" rel="stylesheet">
-  <link href="https://farukhosen35.github.io/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://farukhosen35.github.io/assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="./resource/owl.carousel.min.css" rel="stylesheet">
-  <link href="./resource/venobox.css" rel="stylesheet">
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #06070c;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(#8b5cf6, #22d3ee);
+        border-radius: 99px;
+        border: 2px solid #06070c;
+      }
 
-  <!-- Template Main CSS File -->
-  <link href="./resource/style.css" rel="stylesheet">
+      /* ========== 3. LAYOUT ========== */
+      .wrap {
+        width: 100%;
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .section {
+        padding: 110px 0;
+        position: relative;
+      }
+      .grad-text {
+        background: var(--grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
 
-</head>
+      /* ========== 4. SCROLL PROGRESS ========== */
+      .progress-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 0;
+        z-index: 1000;
+        background: var(--grad);
+        box-shadow: 0 0 14px rgba(139, 92, 246, 0.8);
+        transition: width 0.1s linear;
+      }
 
-<body id="page-top" data-new-gr-c-s-check-loaded="14.984.0" data-gr-ext-installed="">
+      /* ========== 5. NAV ========== */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 900;
+        transition:
+          background 0.35s var(--ease),
+          border-color 0.35s,
+          backdrop-filter 0.35s;
+        border-bottom: 1px solid transparent;
+      }
+      .nav.scrolled {
+        background: rgba(6, 7, 12, 0.72);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border-bottom-color: var(--stroke);
+      }
+      .nav-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-family: "Sora", sans-serif;
+        font-weight: 700;
+        font-size: 16.5px;
+        letter-spacing: -0.01em;
+      }
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: var(--grad);
+        color: #08090f;
+        font-weight: 800;
+        font-size: 16px;
+        box-shadow: 0 8px 24px -8px rgba(139, 92, 246, 0.9);
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .nav-links a {
+        position: relative;
+        padding: 9px 13px;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--muted);
+        transition:
+          color 0.25s,
+          background 0.25s;
+      }
+      .nav-links a:hover {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .nav-links a.active {
+        color: var(--text);
+      }
+      .nav-links a.active::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 3px;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--grad);
+      }
+      .nav-cta {
+        padding: 10px 20px !important;
+        border-radius: 99px !important;
+        background: var(--grad) !important;
+        color: #06070c !important;
+        font-weight: 700 !important;
+        box-shadow: 0 10px 26px -12px rgba(34, 211, 238, 0.9);
+        transition:
+          transform 0.25s var(--ease),
+          box-shadow 0.25s !important;
+      }
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 32px -12px rgba(139, 92, 246, 0.95);
+      }
+      .nav-toggle {
+        display: none;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        border: 1px solid var(--stroke);
+        place-items: center;
+      }
+      .nav-toggle span {
+        display: block;
+        width: 18px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        position: relative;
+        transition: 0.3s;
+      }
+      .nav-toggle span::before,
+      .nav-toggle span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 18px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+      .nav-toggle span::before {
+        top: -6px;
+      }
+      .nav-toggle span::after {
+        top: 6px;
+      }
+      .nav-toggle.open span {
+        background: transparent;
+      }
+      .nav-toggle.open span::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      .nav-toggle.open span::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
 
-  <!-- ======= Header/ Navbar ======= -->
-  <nav class="navbar navbar-b navbar-expand-md fixed-top navbar-reduce" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">Md. Riazul Islam</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
-        aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#experience">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#work">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="services.html">Service</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#contact">Contact</a>
-          </li>
+      /* ========== 6. HERO ========== */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 140px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.12fr 0.88fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 7px 15px 7px 11px;
+        border-radius: 99px;
+        border: 1px solid var(--stroke-2);
+        background: rgba(255, 255, 255, 0.04);
+        font-size: 12.5px;
+        font-weight: 500;
+        color: #c9cfe2;
+        letter-spacing: 0.02em;
+        backdrop-filter: blur(8px);
+      }
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #34d399;
+        box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.6);
+        }
+        70% {
+          box-shadow: 0 0 0 9px rgba(52, 211, 153, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(52, 211, 153, 0);
+        }
+      }
+      .hero h1 {
+        font-size: clamp(2.4rem, 5.2vw, 4rem);
+        margin: 22px 0 14px;
+        font-weight: 800;
+      }
+      .hero-role {
+        font-family: "Sora", sans-serif;
+        font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+        font-weight: 600;
+        color: #b8bfd4;
+        min-height: 2.2em;
+      }
+      .hero-role .typed-text {
+        background: var(--grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .caret {
+        display: inline-block;
+        width: 2px;
+        height: 1.05em;
+        background: var(--cyan);
+        margin-left: 3px;
+        vertical-align: -0.15em;
+        animation: blink 1s steps(2) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .hero-lead {
+        color: var(--muted);
+        font-size: 15.5px;
+        max-width: 540px;
+        margin: 22px 0 34px;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        border-radius: 99px;
+        font-weight: 600;
+        font-size: 14.5px;
+        transition:
+          transform 0.3s var(--ease),
+          box-shadow 0.3s,
+          background 0.3s,
+          border-color 0.3s;
+        white-space: nowrap;
+      }
+      .btn-primary {
+        background: var(--grad);
+        color: #06070c;
+        box-shadow: 0 14px 34px -14px rgba(139, 92, 246, 0.95);
+      }
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 22px 44px -16px rgba(34, 211, 238, 0.9);
+      }
+      .btn-ghost {
+        border: 1px solid var(--stroke-2);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .btn-ghost:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .socials {
+        display: flex;
+        gap: 12px;
+        margin-top: 38px;
+      }
+      .socials a {
+        width: 44px;
+        height: 44px;
+        border-radius: 13px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--stroke);
+        background: rgba(255, 255, 255, 0.035);
+        color: var(--muted);
+        font-size: 16px;
+        transition: 0.3s var(--ease);
+      }
+      .socials a:hover {
+        color: #06070c;
+        background: var(--grad);
+        border-color: transparent;
+        transform: translateY(-4px) rotate(-4deg);
+        box-shadow: 0 14px 28px -12px rgba(139, 92, 246, 0.95);
+      }
+
+      /* hero visual */
+      .hero-visual {
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
+      .avatar-ring {
+        position: relative;
+        width: min(340px, 78vw);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        padding: 5px;
+        background: conic-gradient(
+          from 0deg,
+          #8b5cf6,
+          #22d3ee,
+          #f472b6,
+          #8b5cf6
+        );
+        animation: spin 14s linear infinite;
+        box-shadow: 0 0 90px -18px rgba(139, 92, 246, 0.85);
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .avatar-ring::after {
+        content: "";
+        position: absolute;
+        inset: -22px;
+        border-radius: 50%;
+        border: 1px dashed rgba(255, 255, 255, 0.13);
+        animation: spin 28s linear infinite reverse;
+      }
+      .avatar-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #0a0c14;
+        animation: spin 14s linear infinite reverse;
+        display: grid;
+        place-items: center;
+      }
+      .avatar-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .avatar-fallback {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-family: "Sora", sans-serif;
+        font-size: 64px;
+        font-weight: 800;
+        background: var(--grad-soft);
+        color: #c9cfe2;
+      }
+      .float-card {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 11px 16px;
+        border-radius: 14px;
+        font-size: 13px;
+        font-weight: 600;
+        background: rgba(14, 16, 26, 0.88);
+        border: 1px solid var(--stroke-2);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9);
+        animation: float 6s ease-in-out infinite;
+      }
+      .float-card i {
+        font-size: 15px;
+      }
+      .fc-1 {
+        top: 6%;
+        left: -8%;
+        color: #a78bfa;
+      }
+      .fc-2 {
+        bottom: 14%;
+        right: -6%;
+        color: #67e8f9;
+        animation-delay: -2s;
+      }
+      .fc-3 {
+        bottom: -2%;
+        left: 8%;
+        color: #f9a8d4;
+        animation-delay: -4s;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+
+      /* hero stats */
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 80px;
+      }
+      .stat {
+        padding: 24px 20px;
+        border-radius: 18px;
+        text-align: center;
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        transition: 0.35s var(--ease);
+      }
+      .stat:hover {
+        transform: translateY(-6px);
+        border-color: var(--stroke-2);
+        background: var(--card-2);
+      }
+      .stat b {
+        display: block;
+        font-family: "Sora", sans-serif;
+        font-size: 32px;
+        font-weight: 800;
+        background: var(--grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .stat span {
+        font-size: 12.5px;
+        color: var(--muted);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      /* ========== 7. SECTION HEAD ========== */
+      .sec-head {
+        max-width: 660px;
+        margin: 0 auto 64px;
+        text-align: center;
+      }
+      .eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--cyan);
+        margin-bottom: 16px;
+      }
+      .sec-head h2 {
+        font-size: clamp(1.85rem, 3.6vw, 2.7rem);
+        margin-bottom: 16px;
+      }
+      .sec-head p {
+        color: var(--muted);
+        font-size: 15.5px;
+      }
+      .sec-line {
+        width: 64px;
+        height: 3px;
+        border-radius: 3px;
+        background: var(--grad);
+        margin: 22px auto 0;
+      }
+
+      /* ========== 8. ABOUT ========== */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 56px;
+        align-items: center;
+      }
+      .about-photo {
+        position: relative;
+        border-radius: 26px;
+        padding: 1px;
+        background: linear-gradient(
+          150deg,
+          rgba(139, 92, 246, 0.6),
+          rgba(34, 211, 238, 0.35),
+          transparent 70%
+        );
+      }
+      .about-photo-inner {
+        border-radius: 25px;
+        overflow: hidden;
+        background: #0a0c14;
+        aspect-ratio: 4/4.6;
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
+      .about-photo-inner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .about-photo-inner .avatar-fallback {
+        font-size: 88px;
+      }
+      .about-badge {
+        position: absolute;
+        right: -18px;
+        bottom: 26px;
+        padding: 16px 22px;
+        border-radius: 18px;
+        text-align: center;
+        background: rgba(14, 16, 26, 0.92);
+        border: 1px solid var(--stroke-2);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 22px 44px -20px rgba(0, 0, 0, 0.95);
+      }
+      .about-badge b {
+        display: block;
+        font-family: "Sora", sans-serif;
+        font-size: 26px;
+        background: var(--grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .about-badge span {
+        font-size: 11.5px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .about-text h3 {
+        font-size: clamp(1.5rem, 2.8vw, 2rem);
+        margin-bottom: 18px;
+      }
+      .about-text p {
+        color: var(--muted);
+        font-size: 15.3px;
+        margin-bottom: 16px;
+      }
+      .about-text strong {
+        color: #dfe4f2;
+        font-weight: 600;
+      }
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin: 28px 0 32px;
+      }
+      .info-item {
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid var(--stroke);
+        background: var(--card);
+        transition: 0.3s;
+      }
+      .info-item:hover {
+        border-color: var(--stroke-2);
+        background: var(--card-2);
+      }
+      .info-item small {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      .info-item span {
+        font-size: 14px;
+        font-weight: 600;
+        color: #dfe4f2;
+        word-break: break-word;
+      }
+
+      /* ========== 9. SKILLS ========== */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .skill-card {
+        padding: 30px 26px;
+        border-radius: var(--radius);
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        transition: 0.4s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .skill-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.4s;
+        background: var(--grad-soft);
+        pointer-events: none;
+      }
+      .skill-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--stroke-2);
+      }
+      .skill-card:hover::before {
+        opacity: 1;
+      }
+      .skill-head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 22px;
+        position: relative;
+      }
+      .skill-ico {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        font-size: 19px;
+        background: var(--grad-soft);
+        border: 1px solid var(--stroke-2);
+        color: var(--cyan);
+      }
+      .skill-head h3 {
+        font-size: 17px;
+        font-weight: 700;
+      }
+      .skill-head small {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .skill-list {
+        position: relative;
+      }
+      .skill-row {
+        margin-bottom: 16px;
+      }
+      .skill-row:last-child {
+        margin-bottom: 0;
+      }
+      .skill-row .top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        margin-bottom: 8px;
+        color: #c9cfe2;
+        font-weight: 500;
+      }
+      .skill-row .top em {
+        font-style: normal;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .skill-bar {
+        height: 7px;
+        border-radius: 99px;
+        background: rgba(255, 255, 255, 0.07);
+        overflow: hidden;
+      }
+      .skill-bar i {
+        display: block;
+        height: 100%;
+        width: 0;
+        border-radius: 99px;
+        background: var(--grad);
+        transition: width 1.5s var(--ease);
+      }
+      .reveal.in .skill-bar i {
+        width: var(--w);
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 44px;
+        justify-content: center;
+      }
+      .chip {
+        padding: 9px 17px;
+        border-radius: 99px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #c2c9dc;
+        border: 1px solid var(--stroke);
+        background: rgba(255, 255, 255, 0.03);
+        transition: 0.3s var(--ease);
+      }
+      .chip:hover {
+        color: #06070c;
+        background: var(--grad);
+        border-color: transparent;
+        transform: translateY(-3px);
+      }
+
+      /* ========== 10. TIMELINE ========== */
+      .timeline {
+        position: relative;
+        max-width: 880px;
+        margin: 0 auto;
+        padding-left: 36px;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        border-radius: 2px;
+        background: linear-gradient(180deg, #8b5cf6, #22d3ee 55%, transparent);
+      }
+      .t-item {
+        position: relative;
+        margin-bottom: 26px;
+      }
+      .t-item:last-child {
+        margin-bottom: 0;
+      }
+      .t-item::before {
+        content: "";
+        position: absolute;
+        left: -33px;
+        top: 30px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--bg);
+        border: 2px solid var(--cyan);
+        box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.12);
+      }
+      .t-card {
+        padding: 26px 28px;
+        border-radius: var(--radius);
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        transition: 0.4s var(--ease);
+      }
+      .t-card:hover {
+        transform: translateX(6px);
+        border-color: var(--stroke-2);
+        background: var(--card-2);
+      }
+      .t-top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: flex-start;
+        margin-bottom: 6px;
+      }
+      .t-card h3 {
+        font-size: 18px;
+      }
+      .t-card .co {
+        color: var(--cyan);
+        font-weight: 600;
+        font-size: 14.5px;
+        margin-bottom: 2px;
+      }
+      .t-date {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: #c9cfe2;
+        padding: 6px 13px;
+        border-radius: 99px;
+        border: 1px solid var(--stroke-2);
+        background: rgba(255, 255, 255, 0.04);
+        white-space: nowrap;
+      }
+      .t-card p {
+        color: var(--muted);
+        font-size: 14.5px;
+        margin-top: 10px;
+      }
+      .t-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .t-tags span {
+        font-size: 11.5px;
+        padding: 5px 12px;
+        border-radius: 99px;
+        background: rgba(139, 92, 246, 0.13);
+        color: #c4b5fd;
+        border: 1px solid rgba(139, 92, 246, 0.25);
+      }
+
+      /* ========== 11. PROJECTS ========== */
+      .proj-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .proj {
+        border-radius: var(--radius);
+        overflow: hidden;
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        transition: 0.45s var(--ease);
+        display: flex;
+        flex-direction: column;
+      }
+      .proj:hover {
+        transform: translateY(-9px);
+        border-color: var(--stroke-2);
+        box-shadow: 0 30px 60px -30px rgba(139, 92, 246, 0.6);
+      }
+      .p-media {
+        position: relative;
+        height: 180px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--g1), var(--g2));
+      }
+      .p-media i {
+        font-size: 46px;
+        color: rgba(255, 255, 255, 0.9);
+        filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+      }
+      .p-media img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition:
+          transform 0.7s var(--ease),
+          opacity 0.4s;
+      }
+      .proj:hover .p-media img {
+        transform: scale(1.07);
+      }
+      .p-media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          transparent 40%,
+          rgba(6, 7, 12, 0.75)
+        );
+      }
+      .p-body {
+        padding: 24px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .p-body h3 {
+        font-size: 16.5px;
+        margin-bottom: 10px;
+      }
+      .p-body h3 a {
+        transition: color 0.25s;
+      }
+      .p-body h3 a:hover {
+        color: var(--cyan);
+      }
+      .p-body p {
+        color: var(--muted);
+        font-size: 13.8px;
+        flex: 1;
+      }
+      .p-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .p-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .p-tech span {
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 99px;
+        background: rgba(34, 211, 238, 0.1);
+        color: #67e8f9;
+        border: 1px solid rgba(34, 211, 238, 0.2);
+      }
+      .p-link {
+        width: 36px;
+        height: 36px;
+        border-radius: 11px;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        border: 1px solid var(--stroke);
+        color: var(--muted);
+        transition: 0.3s var(--ease);
+      }
+      .p-link:hover {
+        color: #06070c;
+        background: var(--grad);
+        border-color: transparent;
+        transform: rotate(-45deg);
+      }
+
+      /* ========== 12. EDUCATION ========== */
+      .edu-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .edu-card {
+        padding: 30px 26px;
+        border-radius: var(--radius);
+        text-align: center;
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        transition: 0.4s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .edu-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--stroke-2);
+        background: var(--card-2);
+      }
+      .edu-ico {
+        width: 60px;
+        height: 60px;
+        border-radius: 18px;
+        margin: 0 auto 20px;
+        display: grid;
+        place-items: center;
+        font-size: 23px;
+        color: var(--cyan);
+        background: var(--grad-soft);
+        border: 1px solid var(--stroke-2);
+      }
+      .edu-card h3 {
+        font-size: 16.5px;
+        margin-bottom: 6px;
+      }
+      .edu-card .inst {
+        font-size: 13.5px;
+        color: var(--cyan);
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+      .edu-card .yr {
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 0.05em;
+        margin-bottom: 14px;
+      }
+      .edu-card p {
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+
+      /* ========== 13. BLOG ========== */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      .blog-card {
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: var(--card);
+        border: 1px solid var(--stroke);
+        transition: 0.4s var(--ease);
+        display: flex;
+        flex-direction: column;
+      }
+      .blog-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--stroke-2);
+      }
+      .b-media {
+        position: relative;
+        height: 172px;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--g1), var(--g2));
+      }
+      .b-media i {
+        font-size: 42px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      .b-media img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s var(--ease);
+      }
+      .blog-card:hover .b-media img {
+        transform: scale(1.07);
+      }
+      .b-tag {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        z-index: 2;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 5px 12px;
+        border-radius: 99px;
+        background: rgba(6, 7, 12, 0.75);
+        border: 1px solid var(--stroke-2);
+        backdrop-filter: blur(8px);
+      }
+      .b-body {
+        padding: 22px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .b-body h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .b-body p {
+        font-size: 13.6px;
+        color: var(--muted);
+        flex: 1;
+      }
+      .b-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid var(--stroke);
+      }
+      .b-author {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+      .b-author img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: var(--grad-soft);
+      }
+      .b-time {
+        font-size: 12px;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* ========== 14. CONTACT ========== */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 44px;
+        align-items: start;
+      }
+      .contact-card {
+        padding: 34px;
+        border-radius: var(--radius);
+        background: var(--card);
+        border: 1px solid var(--stroke);
+      }
+      .contact-card h3 {
+        font-size: 19px;
+        margin-bottom: 12px;
+      }
+      .contact-card > p {
+        color: var(--muted);
+        font-size: 14.5px;
+        margin-bottom: 26px;
+      }
+      .c-list li {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+      .c-ico {
+        width: 44px;
+        height: 44px;
+        border-radius: 13px;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        background: var(--grad-soft);
+        border: 1px solid var(--stroke-2);
+        color: var(--cyan);
+        font-size: 15px;
+      }
+      .c-list small {
+        display: block;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+      }
+      .c-list span {
+        font-size: 14.3px;
+        font-weight: 500;
+        color: #dfe4f2;
+        word-break: break-word;
+      }
+      .contact-card .socials {
+        margin-top: 26px;
+      }
+      .cv-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+      }
+      .cv-row .btn {
+        padding: 12px 22px;
+        font-size: 13.5px;
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+      }
+      .f-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .field {
+        position: relative;
+      }
+      .field label {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: var(--muted);
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+      .field input,
+      .field textarea {
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 14px;
+        font-family: inherit;
+        font-size: 14.3px;
+        background: rgba(255, 255, 255, 0.035);
+        border: 1px solid var(--stroke);
+        color: var(--text);
+        transition: 0.3s;
+        outline: none;
+        resize: vertical;
+      }
+      .field input::placeholder,
+      .field textarea::placeholder {
+        color: #5f667d;
+      }
+      .field input:focus,
+      .field textarea:focus {
+        border-color: rgba(139, 92, 246, 0.7);
+        background: rgba(139, 92, 246, 0.06);
+        box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+      }
+      form .btn {
+        justify-content: center;
+        margin-top: 6px;
+      }
+      .toast {
+        position: fixed;
+        bottom: 28px;
+        left: 50%;
+        transform: translate(-50%, 120px);
+        padding: 14px 26px;
+        border-radius: 14px;
+        font-size: 14px;
+        font-weight: 600;
+        background: rgba(14, 16, 26, 0.95);
+        border: 1px solid var(--stroke-2);
+        box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.95);
+        z-index: 1200;
+        transition: transform 0.45s var(--ease);
+        color: var(--text);
+      }
+      .toast.show {
+        transform: translate(-50%, 0);
+      }
+
+      /* ========== 15. FOOTER ========== */
+      footer {
+        border-top: 1px solid var(--stroke);
+        padding: 44px 0 34px;
+        margin-top: 40px;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          rgba(139, 92, 246, 0.05)
+        );
+      }
+      .foot-inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .foot-inner p {
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+      .foot-inner strong {
+        color: #dfe4f2;
+      }
+      .foot-links {
+        display: flex;
+        gap: 22px;
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+      .foot-links a:hover {
+        color: var(--cyan);
+      }
+
+      /* ========== 16. BACK TO TOP ========== */
+      .to-top {
+        position: fixed;
+        right: 26px;
+        bottom: 26px;
+        z-index: 800;
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: var(--grad);
+        color: #06070c;
+        font-size: 15px;
+        box-shadow: 0 16px 34px -14px rgba(139, 92, 246, 0.95);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(16px);
+        transition: 0.4s var(--ease);
+      }
+      .to-top.show {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+      }
+      .to-top:hover {
+        transform: translateY(-4px);
+      }
+
+      /* ========== 17. REVEAL ========== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(34px);
+        transition:
+          opacity 0.85s var(--ease),
+          transform 0.85s var(--ease);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ========== 18. RESPONSIVE ========== */
+      @media (max-width: 1080px) {
+        .nav-links a {
+          padding: 9px 10px;
+          font-size: 13.2px;
+        }
+        .proj-grid,
+        .skills-grid,
+        .edu-grid,
+        .blog-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 56px;
+          text-align: center;
+        }
+        .hero-text {
+          order: 2;
+        }
+        .hero-visual {
+          order: 1;
+        }
+        .hero-lead {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .hero-actions,
+        .socials {
+          justify-content: center;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 44px;
+        }
+        .about-photo {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-stats {
+          grid-template-columns: repeat(2, 1fr);
+          margin-top: 56px;
+        }
+        .float-card {
+          display: none;
+        }
+      }
+      @media (max-width: 820px) {
+        .nav-toggle {
+          display: grid;
+        }
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          left: 16px;
+          right: 16px;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 4px;
+          padding: 16px;
+          border-radius: 20px;
+          background: rgba(10, 12, 20, 0.96);
+          border: 1px solid var(--stroke-2);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.95);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-14px) scale(0.98);
+          transition: 0.35s var(--ease);
+        }
+        .nav-links.open {
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+        .nav-links a {
+          padding: 13px 16px;
+          border-radius: 12px;
+          font-size: 14.5px;
+        }
+        .nav-links a.active::after {
+          display: none;
+        }
+        .nav-links a.active {
+          background: rgba(139, 92, 246, 0.15);
+          color: #c4b5fd;
+        }
+        .nav-cta {
+          text-align: center;
+          margin-top: 6px;
+        }
+        .section {
+          padding: 84px 0;
+        }
+        .timeline {
+          padding-left: 30px;
+        }
+      }
+      @media (max-width: 680px) {
+        .proj-grid,
+        .skills-grid,
+        .edu-grid,
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+        .f-row {
+          grid-template-columns: 1fr;
+        }
+        .sec-head {
+          margin-bottom: 44px;
+        }
+        .contact-card {
+          padding: 26px;
+        }
+        .t-card {
+          padding: 22px;
+        }
+        .foot-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .wrap {
+          padding: 0 18px;
+        }
+        .hero {
+          padding-top: 120px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          transition-duration: 0.001ms !important;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- scroll progress -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#home" class="brand">
+          <span>Riazul Islam</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#work" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="#contact" class="nav-link nav-cta">Hire Me</a></li>
         </ul>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- ======= Intro Section ======= -->
-  <div id="home" class="intro route bg-image" style="background-image: url(intro-bg.jpg)">
-    <div class="overlay-itro"></div>
-    <div class="intro-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">Hi</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">This is Riaz,I am a software engineer,I
-              am graduated from B.Sc(Engg) in CSE at MBSTU,I love to learn new things,I love Programming,I love software
-              development</span><strong class="text-slider">This is Riaz</strong><span
-              class="typed-cursor typed-cursor--blink">|</span></p>
-          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
-        </div>
-      </div>
-    </div>
-  </div><!-- End Intro Section -->
+    <!-- ============ HERO ============ -->
+    <header class="hero" id="home">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <span class="pill"
+              ><span class="dot"></span> Available for new opportunities</span
+            >
 
-  <main id="main">
+            <h1>Hi, I'm <span class="grad-text">Md. Riazul Islam</span></h1>
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-6 col-md-5">
-                      <div class="about-img">
-                        <img src="my_pic.jpg" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                      <div class="about-info">
-                        <p><span class="title-s">Name: </span> <span>Md. Riazul Islam</span></p>
-                        <p><span class="title-s">Profile: </span> <span>Software Engineer</span></p>
-                        <p><span class="title-s">Email: </span> <span>riazul.cse.mbstu@gmail.com</span></p>
-                        <p><span class="title-s">Phone: </span> <span>01957171296</span></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skill</p>
-                    <span>Data Structures/Algorithms</span> <span class="pull-right">55%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="55"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>OOP/Problems Solving</span> <span class="pull-right">60%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>PHP 8</span> <span class="pull-right">65%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>Laravel 10</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>HTML5/CSS3/Bootstrap 4</span> <span class="pull-right">75%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>SQL/MySQL/MONGO DB/ Git/GitLab</span> <span class="pull-right">60%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <span>Javascript/JQuery/Ajax/VueJS 2/ Nuxtjs</span> <span class="pull-right">60%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+            <p class="hero-role">
+              I'm a <span class="typed-text" id="typed"></span
+              ><span class="caret"></span>
+            </p>
 
-                    <span>ReactJS/ NextJS /NodeJS /ExpressJS</span> <span class="pull-right">50%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
+            <p class="hero-lead">
+              Assistant Manager (Software Development) at
+              <strong>Textile Today Innovation Hub</strong> with 7+ years of
+              experience building fast, scalable web &amp; mobile products using
+              Laravel, Vue.js and Flutter — and exploring AI automation, LLMs
+              &amp; Agentic AI.
+            </p>
 
-                    <span>Communication Skills</span> <span class="pull-right">80%</span>
-                    <div class="progress">
-                      <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        About me
-                      </h5>
-                    </div>
-                    <p class="lead">
-                      I’m Md. Riazul Islam,from Magura district. My study field is on Computer Science
-                      &amp; Engineering at Mawlana Bhashani Science &amp; Technology University. I’ve strong knowledges
-                      over PHP OOP,
-                      Full stack web development &amp; Laravel VueJS.
-                    </p>
-                    <p class="lead">
-                      I want to build my career in an educational institute, employing and pertaining to utilize my
-                      technical skills
-                      and research knowledge. I also want to make a career rather than just a job and to face the
-                      challenges in all
-                      aspects.
-                    </p>
-                    <p class="lead">
-                      I’ve some working experience with some Projects. I'm a dreamer. I’m rapid learner, idea maker
-                      &amp; like to take challenges. My hobby is
-                      reading books.I want to be a very good human.
+            <div class="hero-actions">
+              <a href="#work" class="btn btn-primary"
+                ><i class="fa-solid fa-layer-group"></i> View My Work</a
+              >
+              <a
+                href="https://drive.google.com/file/d/1Ov1IlbfQB8Tv_iNNbh6QAZUa8cEtPinb/view?usp=sharing"
+                download
+                class="btn btn-ghost"
+                ><i class="fa-solid fa-download"></i> Download CV</a
+              >
+            </div>
 
-                    </p>
-                  </div>
-                </div>
+            <div class="socials">
+              <a
+                href="https://github.com/riazcs"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/riazulcse47/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/riazul.islam.cse47"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.twitter.com/riazulcse47"
+                target="_blank"
+                rel="noopener"
+                aria-label="Twitter"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/channel/UCDKX6ogaCPXdD3aSGvlkJpQ"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="avatar-ring">
+              <div class="avatar-inner">
+                <div class="avatar-fallback">RI</div>
+                <img
+                  src="my_pic.jpg"
+                  alt="Md. Riazul Islam"
+                  onerror="this.remove()"
+                />
               </div>
+            </div>
+            <div class="float-card fc-1">
+              <i class="fa-brands fa-laravel"></i> Laravel 11
+            </div>
+            <div class="float-card fc-2">
+              <i class="fa-brands fa-vuejs"></i> Vue 3 / Nuxt
+            </div>
+            <div class="float-card fc-3">
+              <i class="fa-solid fa-robot"></i> AI Automation
             </div>
           </div>
         </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <b class="counter" data-target="7" data-suffix="+">0</b
+            ><span>Years Experience</span>
+          </div>
+          <div class="stat">
+            <b class="counter" data-target="15" data-suffix="+">0</b
+            ><span>Projects Delivered</span>
+          </div>
+          <div class="stat">
+            <b class="counter" data-target="10" data-suffix="k+">0</b
+            ><span>Lines of Code</span>
+          </div>
+          <div class="stat">
+            <b class="counter" data-target="4" data-suffix="">0</b
+            ><span>Teams &amp; Roles</span>
+          </div>
+        </div>
       </div>
-    </section><!-- End About Section -->
+    </header>
 
-    <!-- ======= Education Section ======= -->
+    <main>
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="wrap">
+          <div class="about-grid">
+            <div class="about-photo reveal">
+              <div class="about-photo-inner">
+                <div class="avatar-fallback">RI</div>
+                <img
+                  src="my_pic.jpg"
+                  alt="Md. Riazul Islam"
+                  onerror="this.remove()"
+                />
+              </div>
+              <div class="about-badge">
+                <b>7+</b>
+                <span>Years Coding</span>
+              </div>
+            </div>
 
-    <section id="education" class="services-mf pt-5 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Education
+            <div class="about-text reveal">
+              <span class="eyebrow">About Me</span>
+              <h3>
+                Building products that
+                <span class="grad-text">actually ship</span>.
               </h3>
-              <p class="subtitle-a">
-                To enrich knowledge, I am lucky to get certified from several famous institutions in our country.
+
+              <p>
+                I'm <strong>Md. Riazul Islam</strong>, a Full Stack Developer
+                from Magura, Bangladesh. I hold a B.Sc. (Engg) in Computer
+                Science &amp; Engineering from
+                <strong
+                  >Mawlana Bhashani Science &amp; Technology University</strong
+                >, and I currently lead software development at
+                <strong>Textile Today Innovation Hub</strong>.
               </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-university"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">B.Sc.(Engg) in CSE</h2>
-                <p class="s-description text-center">
-                  A four years Bachelor Program in Engineering at Mawlana Bhashani Science and Technology University,
-                  Tangail.Involved in academic
-                  and extra curricular activites.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-stats-bars"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">H.S.C</h2>
-                <p class="s-description text-center">
-                  A two years Program in Science group at Hamidpur Alhera College Jeshore. I
-                  Completed my H.S.C examination
-                  with GPA-5.00 out of 5.00.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-trophy"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Dakhil</h2>
-                <p class="s-description text-center">
-                  A five years Program in Science group at Khamar Para Alim Madrasha,
-                  Magura. I completed my Dakhil
-                  exam with GPA-5.00 out of 5.00.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ======= Experience ======= -->
-
-    <section id="experience" class="services-mf pt-5 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Experience
-              </h3>
-              <p class="subtitle-a">
-                I have been working as a software engineer since 2019. I am also working with PHP laravel vueJS.
+              <p>
+                My core stack is <strong>PHP 8 / Laravel</strong> on the
+                backend, <strong>Vue 3 / Nuxt 3</strong> on the frontend, and
+                <strong>Flutter</strong> for mobile. I care deeply about clean
+                architecture, performance, security and the small UX details
+                that make software feel effortless.
               </p>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-code-working"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Software Engineer</h2>
-                <h5 class="text-center"> <a href="https://www.textiletoday.com.bd/" target="_blank"> Textile Today</h5>
-                </a>
-                <h6 class="text-center">From: 12 July 2020 - Today</h6>
-                <p class="s-description text-center">
-                  I am software developer Textile Today using HTML5 / CSS3 / PHP / MySQL / Git / VueJS 2/Nuxtjs/ Laravel
-                  8 Api/
-                  Javascript / Bootstrap.
-                  This company working with Textile Industry Network develop project.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-code-working"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Junior Programmer</h2>
-                <h5 class="text-center"> <a href="https://www.ictlayer.com/" target="_blank">IctLayer</h5></a>
-                <h6 class="text-center">From: 01 November 2019 - 30 April 2020</h6>
-                <p class="s-description text-center">
-                  I am software developer ICT Layer using HTML5 / CSS3 / PHP / MySQL / VueJS / CodeIgniter / Javascript
-                  / Bootstrap.
-                  I am working with ERP sub-part as HR accounts marketing.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="service-ico">
-                <span class="ico-circle"><i class="ion-code-working"></i></span>
-              </div>
-              <div class="service-content">
-                <h2 class="s-title">Intern Software developer</h2>
-                <h5 class="text-center"> <a href="https://www.rssoftware.com/" target="_blank">RS Software</h5></a>
-                <h6 class="text-center">From: 01 Jun 2019 - 30 Augest 2020</h6>
-                <p class="s-description text-center">
-                  I am software developer RS Software using HTML5 / CSS3 / PHP / MySQL / CodeIgniter / Javascript /
-                  Bootstrap.
-                  I am working with ERP sub-part as HR accounts marketing pos software.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Services Section -->
 
-    <!-- ======= Counter Section ======= -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(counters-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="ion-checkmark-round"></i></span>
-              </div>
-              <div class="counter-num">
-                <p class="counter">10</p>
-                <span class="counter-text">Projects Done</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
-              </div>
-              <div class="counter-num">
-                <p class="counter">0</p>
-                <span class="counter-text">Published Papers</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="ion-ios-people"></i></span>
-              </div>
-              <div class="counter-num">
-                <p class="counter">10000</p>
-                <span class="counter-text">Lines of Code</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="ion-ribbon-a"></i></span>
-              </div>
-              <div class="counter-num">
-                <p class="counter">2</p>
-                <span class="counter-text">Attendend Conferences</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Counter Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="work" class="portfolio-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                My Works
-              </h3>
-              <p class="subtitle-a">
-                I am a rapid learner, hard working and productive.
+              <p>
+                Lately I've been diving into
+                <strong>AI automation, LLMs and Agentic AI</strong> — building
+                tools that remove repetitive work so teams can focus on what
+                matters.
               </p>
-              <div class="line-mf"></div>
+
+              <div class="info-grid">
+                <div class="info-item">
+                  <small>Name</small><span>Md. Riazul Islam</span>
+                </div>
+                <div class="info-item">
+                  <small>Role</small
+                  ><span>Assistant Manager, Software Dev.</span>
+                </div>
+                <div class="info-item">
+                  <small>Email</small><span>riazul.cse.mbstu@gmail.com</span>
+                </div>
+                <div class="info-item">
+                  <small>Phone</small><span>+880 1957-171296</span>
+                </div>
+                <div class="info-item">
+                  <small>Location</small><span>Uttara, Dhaka, Bangladesh</span>
+                </div>
+                <div class="info-item">
+                  <small>Website</small><span>riazcs.github.io</span>
+                </div>
+              </div>
+
+              <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary"
+                  ><i class="fa-solid fa-paper-plane"></i> Let's Talk</a
+                >
+                <a
+                  href="https://www.linkedin.com/in/riazulcse47/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-ghost"
+                  ><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a
+                >
+              </div>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="https://textiletalenthunt.com/" data-gall="portfolioGallery" class="venobox vbox-item">
-                <div class="work-img">
-                  <a href="https://textiletalenthunt.com/" target="_blank"><img src="./resource/online-exam.png" alt=""
-                      class="img-fluid" style="height: 160px;"></a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title"><a href="https://textiletalenthunt.com/" target="_blank">Online exam
-                        application</a></h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Technology: Laravel 8 Api/ MySQL/ Nuxt js</span> / <span class="w-date">18
-                        January.
-                        2023</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="##"> <span class="ion-ios-plus-outline"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="https://textiletoday.com.bd/" data-gall="portfolioGallery" class="venobox vbox-item">
-                <div class="work-img">
-                  <a href="https://textiletoday.com.bd/" target="_blank"><img src="./resource/enews.jpeg" alt=""
-                      class="img-fluid" style="height: 160px;"></a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title"> <a href="https://textiletoday.com.bd/" target="_blank">Online e-magazine
-                        SPA</a> </h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Technology: Laravel 8 Api/ MySQL / Vuejs 2</span> / <span
-                        class="w-date">15 November.
-                        2022</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="##"> <span class="ion-ios-plus-outline"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="https://flipper.com.bd/" data-gall="portfolioGallery" class="venobox vbox-item">
-                <div class="work-img">
-                  <a href="https://flipper.com.bd/" target="_blank"><img src="./resource/ecommerce.jpg"
-                      style="height: 135px;" class="img-fluid"></a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title"><a href="https://flipper.com.bd/" target="_blank">Multi-vendor E-commerce
-                        SPA</a>
-                    </h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Technology: Laravel Api/ MySQL / Nuxtjs</span> / <span class="w-date">8
-                        October.
-                        2021</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="##"> <span class="ion-ios-plus-outline"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+      </section>
+
+      <!-- ============ SKILLS ============ -->
+      <section class="section" id="skills">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">My Toolkit</span>
+            <h2>Skills &amp; Technologies</h2>
+            <p>
+              Tools I reach for every day to design, build and ship reliable
+              software.
+            </p>
+            <div class="sec-line"></div>
           </div>
 
-        </div>
+          <div class="skills-grid">
+            <div class="skill-card reveal">
+              <div class="skill-head">
+                <div class="skill-ico"><i class="fa-solid fa-server"></i></div>
+                <div>
+                  <h3>Backend</h3>
+                  <small>APIs &amp; architecture</small>
+                </div>
+              </div>
+              <div class="skill-list">
+                <div class="skill-row">
+                  <div class="top">
+                    <span>PHP 8.1 / Laravel 10–11</span><em>90%</em>
+                  </div>
+                  <div class="skill-bar"><i style="--w: 90%"></i></div>
+                </div>
+                <div class="skill-row">
+                  <div class="top">
+                    <span>REST API Design</span><em>88%</em>
+                  </div>
+                  <div class="skill-bar"><i style="--w: 88%"></i></div>
+                </div>
+                <div class="skill-row">
+                  <div class="top">
+                    <span>MySQL / MongoDB</span><em>85%</em>
+                  </div>
+                  <div class="skill-bar"><i style="--w: 85%"></i></div>
+                </div>
+                <div class="skill-row">
+                  <div class="top">
+                    <span>Node.js / Express</span><em>72%</em>
+                  </div>
+                  <div class="skill-bar"><i style="--w: 72%"></i></div>
+                </div>
+              </div>
+            </div>
 
-        <div class="row">
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="https://booking-application-demo.000webhostapp.com/" data-gall="portfolioGallery"
-                class="venobox vbox-item">
-                <div class="work-img">
-                  <a href="https://booking-application-demo.000webhostapp.com/" target="_blank"><img
-                      src="./resource/Hotel-Website.png" alt="" class="img-fluid" style="height: 160px;"></a>
+            <div class="skill-card reveal">
+              <div class="skill-head">
+                <div class="skill-ico"><i class="fa-solid fa-code"></i></div>
+                <div>
+                  <h3>Frontend &amp; Mobile</h3>
+                  <small>Interfaces people enjoy</small>
                 </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title"><a href="https://booking-application-demo.000webhostapp.com/"
-                        target="_blank">Online booking application</a></h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Technology: Laravel 8 / MySQL</span> / <span class="w-date">18 July.
-                        2022</span>
-                    </div>
+              </div>
+              <div class="skill-list">
+                <div class="skill-row">
+                  <div class="top"><span>Vue 3 / Nuxt 3</span><em>88%</em></div>
+                  <div class="skill-bar"><i style="--w: 88%"></i></div>
+                </div>
+                <div class="skill-row">
+                  <div class="top">
+                    <span>HTML5 / CSS3 / Tailwind</span><em>90%</em>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="##"> <span class="ion-ios-plus-outline"></span></a>
-                    </div>
+                  <div class="skill-bar"><i style="--w: 90%"></i></div>
+                </div>
+                <div class="skill-row">
+                  <div class="top">
+                    <span>JavaScript / TypeScript</span><em>82%</em>
                   </div>
+                  <div class="skill-bar"><i style="--w: 82%"></i></div>
+                </div>
+                <div class="skill-row">
+                  <div class="top">
+                    <span>Flutter (Mobile App)</span><em>75%</em>
+                  </div>
+                  <div class="skill-bar"><i style="--w: 75%"></i></div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="./resource/News-Portal-Website.png" data-gall="portfolioGallery" class="venobox vbox-item">
-                <div class="work-img">
-                  <a href="https://news-web-portal.000webhostapp.com/" target="_blank"><img
-                      src="./resource/News-Portal-Website.png" alt="" class="img-fluid" style="height: 160px;"></a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title"> <a href="https://news-web-portal.000webhostapp.com/" target="_blank">News
-                        portal application</a> </h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Technology: Laravel 8 / MySQL / js</span> / <span class="w-date">15
-                        November.
-                        2022</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="##"> <span class="ion-ios-plus-outline"></span></a>
-                    </div>
-                  </div>
+
+            <div class="skill-card reveal">
+              <div class="skill-head">
+                <div class="skill-ico"><i class="fa-solid fa-cloud"></i></div>
+                <div>
+                  <h3>DevOps &amp; AI</h3>
+                  <small>Ship &amp; automate</small>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="https://texmeta.net/" data-gall="portfolioGallery" class="venobox vbox-item">
-                <div class="work-img">
-                  <a href="https://texmeta.net/" target="_blank"><img src="./resource/social-website.png"
-                      style="height: 135px;" class="img-fluid"></a>
+              <div class="skill-list">
+                <div class="skill-row">
+                  <div class="top">
+                    <span>Git / GitLab / CI-CD</span><em>85%</em>
+                  </div>
+                  <div class="skill-bar"><i style="--w: 85%"></i></div>
                 </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title"><a href="https://texmeta.net/" target="_blank">Social Bussiness Network</a>
-                    </h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Technology: Laravel 8 / MySQL / VueJS2</span> / <span class="w-date">8
-                        October.
-                        2020</span>
-                    </div>
+                <div class="skill-row">
+                  <div class="top">
+                    <span>AWS / Docker / Linux</span><em>76%</em>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="##"> <span class="ion-ios-plus-outline"></span></a>
-                    </div>
+                  <div class="skill-bar"><i style="--w: 76%"></i></div>
+                </div>
+                <div class="skill-row">
+                  <div class="top">
+                    <span>AI Automation / LLMs</span><em>78%</em>
                   </div>
+                  <div class="skill-bar"><i style="--w: 78%"></i></div>
+                </div>
+                <div class="skill-row">
+                  <div class="top">
+                    <span>Agentic AI &amp; Prompting</span><em>70%</em>
+                  </div>
+                  <div class="skill-bar"><i style="--w: 70%"></i></div>
                 </div>
               </div>
             </div>
           </div>
 
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <div class="testimonials paralax-mf bg-image" style="background-image: url(overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div id="testimonial-mf" class="owl-carousel owl-theme owl-loaded owl-drag">
-
-
-              <div class="owl-stage-outer">
-                <div class="owl-stage"
-                  style="transform: translate3d(-1130px, 0px, 0px); transition: all 0.25s ease 0s; width: 2260px;">
-                  <div class="owl-item" style="width: 1110px; margin-right: 20px;">
-                    <div class="testimonial-box">
-                      <div class="author-test">
-                        <img src="my_pic.jpg" alt="" class="rounded-circle b-shadow-a">
-                        <span class="author">Md Riazul Islam</span>
-                      </div>
-                      <div class="content-test">
-                        <p class="description lead">
-                          I believe everything is changed by hard work,planning. Nothing is impossible.
-                          Hardwork + Dreams + Dedication = Success
-                        </p>
-                        <span class="comit"><i class="fa fa-quote-right"></i></span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="owl-item active" style="width: 1110px; margin-right: 20px;">
-                    <div class="testimonial-box">
-                      <div class="author-test">
-                        <img src="my_pic.jpg" alt="" class="rounded-circle b-shadow-a">
-                        <span class="author">Md.Riazul Islam</span>
-                      </div>
-                      <div class="content-test">
-                        <p class="description lead">
-                          If you love what you are doing, you will be successful. Every single day you should wake up
-                          and commit
-                          yourself to becoming a better person.
-                        </p>
-                        <span class="comit"><i class="fa fa-quote-right"></i></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="owl-nav disabled"><button type="button" role="presentation" class="owl-prev"><span
-                    aria-label="Previous">‹</span></button><button type="button" role="presentation"
-                  class="owl-next"><span aria-label="Next">›</span></button></div>
-              <div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button"
-                  class="owl-dot active"><span></span></button></div>
-            </div>
+          <div class="chips reveal">
+            <span class="chip">PHP 8.1</span>
+            <span class="chip">Laravel 10/11</span>
+            <span class="chip">Vue 3</span>
+            <span class="chip">Nuxt 3</span>
+            <span class="chip">Flutter</span>
+            <span class="chip">React / Next.js</span>
+            <span class="chip">Tailwind CSS</span>
+            <span class="chip">Bootstrap 5</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Express</span>
+            <span class="chip">Docker</span>
+            <span class="chip">AWS</span>
+            <span class="chip">Linux</span>
+            <span class="chip">SPA / PWA</span>
+            <span class="chip">AI Automation</span>
+            <span class="chip">Agentic AI</span>
+            <span class="chip">Project Management</span>
           </div>
         </div>
-      </div>
-    </div><!-- End Testimonials Section -->
+      </section>
 
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Blog
-              </h3>
-              <p class="subtitle-a">
-                I want to share my knowledge, thinking and coding.
+      <!-- ============ EXPERIENCE ============ -->
+      <section class="section" id="experience">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Career Path</span>
+            <h2>Work Experience</h2>
+            <p>
+              Five years of building, leading and shipping software — from
+              intern to team lead.
+            </p>
+            <div class="sec-line"></div>
+          </div>
+
+          <div class="timeline">
+            <div class="t-item reveal">
+              <div class="t-card">
+                <div class="t-top">
+                  <div>
+                    <h3>Assistant Manager (Software Development)</h3>
+                    <div class="co">
+                      Textile Today Innovation Hub · Full-time
+                    </div>
+                  </div>
+                  <span class="t-date">Feb 2025 — Present</span>
+                </div>
+                <p>
+                  Lead the engineering team and manage the full software
+                  development lifecycle. Own project management, software
+                  architecture and delivery timelines, drive technical strategy,
+                  and collaborate with stakeholders to align technology with
+                  business goals.
+                </p>
+                <div class="t-tags">
+                  <span>Team Leadership</span><span>Architecture</span
+                  ><span>Project Management</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-item reveal">
+              <div class="t-card">
+                <div class="t-top">
+                  <div>
+                    <h3>Senior Software Engineer</h3>
+                    <div class="co">Textile Today · Full-time · On-site</div>
+                  </div>
+                  <span class="t-date">Feb 2024 — Feb 2025</span>
+                </div>
+                <p>
+                  Led development of multiple web applications with Laravel and
+                  Vue.js / Nuxt.js. Mentored junior developers, ran code reviews
+                  for quality assurance, optimised application performance
+                  through refactoring and database tuning, and integrated
+                  third-party APIs with automated testing.
+                </p>
+                <div class="t-tags">
+                  <span>Laravel</span><span>Vue / Nuxt</span
+                  ><span>Code Review</span><span>Testing</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-item reveal">
+              <div class="t-card">
+                <div class="t-top">
+                  <div>
+                    <h3>Software Engineer</h3>
+                    <div class="co">Textile Today · Full-time</div>
+                  </div>
+                  <span class="t-date">2020 — Feb 2024</span>
+                </div>
+                <p>
+                  Developed and maintained textiletoday.com.bd, texmeta.net and
+                  textiletalenthunt.com. Worked cross-functionally to gather
+                  requirements and ship features, integrated third-party APIs,
+                  and ensured high performance, security and scalability.
+                </p>
+                <div class="t-tags">
+                  <span>PHP</span><span>MySQL</span><span>REST API</span
+                  ><span>JavaScript</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="t-item reveal">
+              <div class="t-card">
+                <div class="t-top">
+                  <div>
+                    <h3>Software Engineer</h3>
+                    <div class="co">Flipper Ltd</div>
+                  </div>
+                  <span class="t-date">2019 — 2020</span>
+                </div>
+                <p>
+                  Built a multi-vendor e-commerce platform with product
+                  catalogue, cart and order processing. Developed RESTful APIs,
+                  integrated payment gateways and optimised the stack for high
+                  traffic.
+                </p>
+                <div class="t-tags">
+                  <span>Laravel API</span><span>Nuxt.js</span><span>MySQL</span
+                  ><span>Bootstrap</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PROJECTS ============ -->
+      <section class="section" id="work">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Portfolio</span>
+            <h2>Featured Projects</h2>
+            <p>
+              A selection of products I've built and maintained in production.
+            </p>
+            <div class="sec-line"></div>
+          </div>
+
+          <div class="proj-grid">
+            <article class="proj reveal">
+              <div class="p-media" style="--g1: #7c3aed; --g2: #22d3ee">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <img
+                  src="./resource/online-exam.png"
+                  alt="Online Exam Application"
+                  onerror="this.remove()"
+                />
+              </div>
+              <div class="p-body">
+                <h3>
+                  <a
+                    href="https://textiletalenthunt.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Online Exam Application</a
+                  >
+                </h3>
+                <p>
+                  A complete recruitment &amp; assessment platform with timed
+                  exams, auto-evaluation and talent dashboards.
+                </p>
+                <div class="p-foot">
+                  <div class="p-tech">
+                    <span>Laravel 8</span><span>MySQL</span><span>Nuxt.js</span>
+                  </div>
+                  <a
+                    href="https://textiletalenthunt.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="p-link"
+                    aria-label="Visit project"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="proj reveal">
+              <div class="p-media" style="--g1: #0ea5e9; --g2: #8b5cf6">
+                <i class="fa-solid fa-newspaper"></i>
+                <img
+                  src="./resource/enews.jpeg"
+                  alt="Online e-Magazine SPA"
+                  onerror="this.remove()"
+                />
+              </div>
+              <div class="p-body">
+                <h3>
+                  <a
+                    href="https://textiletoday.com.bd/"
+                    target="_blank"
+                    rel="noopener"
+                    >Online e-Magazine SPA</a
+                  >
+                </h3>
+                <p>
+                  A high-traffic news &amp; magazine single-page app with a
+                  Laravel API backend and server-side rendering.
+                </p>
+                <div class="p-foot">
+                  <div class="p-tech">
+                    <span>Laravel 8 API</span><span>Vue 2</span
+                    ><span>MySQL</span>
+                  </div>
+                  <a
+                    href="https://textiletoday.com.bd/"
+                    target="_blank"
+                    rel="noopener"
+                    class="p-link"
+                    aria-label="Visit project"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="proj reveal">
+              <div class="p-media" style="--g1: #f472b6; --g2: #8b5cf6">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <img
+                  src="./resource/ecommerce.jpg"
+                  alt="Multi-vendor E-commerce"
+                  onerror="this.remove()"
+                />
+              </div>
+              <div class="p-body">
+                <h3>
+                  <a
+                    href="https://flipper.com.bd/"
+                    target="_blank"
+                    rel="noopener"
+                    >Multi-vendor E-commerce SPA</a
+                  >
+                </h3>
+                <p>
+                  Vendor onboarding, product catalogue, cart, order processing
+                  and payment gateway integration.
+                </p>
+                <div class="p-foot">
+                  <div class="p-tech">
+                    <span>Laravel API</span><span>Nuxt.js</span
+                    ><span>MySQL</span>
+                  </div>
+                  <a
+                    href="https://flipper.com.bd/"
+                    target="_blank"
+                    rel="noopener"
+                    class="p-link"
+                    aria-label="Visit project"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="proj reveal">
+              <div class="p-media" style="--g1: #22d3ee; --g2: #3b82f6">
+                <i class="fa-solid fa-calendar-check"></i>
+                <img
+                  src="./resource/Hotel-Website.png"
+                  alt="Online Booking Application"
+                  onerror="this.remove()"
+                />
+              </div>
+              <div class="p-body">
+                <h3>
+                  <a
+                    href="https://booking-application-demo.000webhostapp.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Online Booking Application</a
+                  >
+                </h3>
+                <p>
+                  Real-time availability, booking management and an admin panel
+                  for reservations and reporting.
+                </p>
+                <div class="p-foot">
+                  <div class="p-tech">
+                    <span>Laravel 8</span><span>MySQL</span
+                    ><span>Bootstrap</span>
+                  </div>
+                  <a
+                    href="https://booking-application-demo.000webhostapp.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="p-link"
+                    aria-label="Visit project"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="proj reveal">
+              <div class="p-media" style="--g1: #34d399; --g2: #0ea5e9">
+                <i class="fa-solid fa-globe"></i>
+                <img
+                  src="./resource/News-Portal-Website.png"
+                  alt="News Portal Application"
+                  onerror="this.remove()"
+                />
+              </div>
+              <div class="p-body">
+                <h3>
+                  <a
+                    href="https://news-web-portal.000webhostapp.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >News Portal Application</a
+                  >
+                </h3>
+                <p>
+                  Category-driven news publishing with an editorial workflow,
+                  search and reader engagement tools.
+                </p>
+                <div class="p-foot">
+                  <div class="p-tech">
+                    <span>Laravel 8</span><span>MySQL</span
+                    ><span>JavaScript</span>
+                  </div>
+                  <a
+                    href="https://news-web-portal.000webhostapp.com/"
+                    target="_blank"
+                    rel="noopener"
+                    class="p-link"
+                    aria-label="Visit project"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="proj reveal">
+              <div class="p-media" style="--g1: #8b5cf6; --g2: #ec4899">
+                <i class="fa-solid fa-users"></i>
+                <img
+                  src="./resource/social-website.png"
+                  alt="Social Business Network"
+                  onerror="this.remove()"
+                />
+              </div>
+              <div class="p-body">
+                <h3>
+                  <a href="https://texmeta.net/" target="_blank" rel="noopener"
+                    >Social Business Network</a
+                  >
+                </h3>
+                <p>
+                  A niche professional network connecting the textile industry
+                  with profiles, feeds and messaging.
+                </p>
+                <div class="p-foot">
+                  <div class="p-tech">
+                    <span>Laravel 8</span><span>Vue 2</span><span>MySQL</span>
+                  </div>
+                  <a
+                    href="https://texmeta.net/"
+                    target="_blank"
+                    rel="noopener"
+                    class="p-link"
+                    aria-label="Visit project"
+                    ><i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EDUCATION ============ -->
+      <section class="section" id="education">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Background</span>
+            <h2>Education</h2>
+            <p>The academic foundation behind the code.</p>
+            <div class="sec-line"></div>
+          </div>
+
+          <div class="edu-grid">
+            <div class="edu-card reveal">
+              <div class="edu-ico">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <h3>B.Sc. (Engg) in CSE</h3>
+              <div class="inst">
+                Mawlana Bhashani Science &amp; Technology University
+              </div>
+              <div class="yr">2014 — 2019</div>
+              <p>
+                Four-year engineering degree in Computer Science &amp;
+                Engineering, with active participation in academic and
+                extra-curricular activities.
               </p>
-              <div class="line-mf"></div>
+            </div>
+
+            <div class="edu-card reveal">
+              <div class="edu-ico">
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+              <h3>Higher Secondary Certificate</h3>
+              <div class="inst">Hamidpur Alhera College, Jashore</div>
+              <div class="yr">Science Group · GPA 5.00 / 5.00</div>
+              <p>
+                Two-year H.S.C programme in the Science group, completed with a
+                perfect GPA.
+              </p>
+            </div>
+
+            <div class="edu-card reveal">
+              <div class="edu-ico"><i class="fa-solid fa-trophy"></i></div>
+              <h3>Dakhil</h3>
+              <div class="inst">Khamar Para Alim Madrasha, Magura</div>
+              <div class="yr">Science Group · GPA 5.00 / 5.00</div>
+              <p>
+                Five-year secondary programme in the Science group, completed
+                with a perfect GPA.
+              </p>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="https://riazcse.blogspot.com/" target="_blank"><img src="./resource/Capture5.JPG" alt=""
-                    class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">Computer Engineering</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="https://riazcse.blogspot.com/" target="_blank">Click Here To See
-                    more</a></h3>
-                <p class="card-description">
-                  A Computer science is more populer subject.It many applications all sectors as medical transports etc.
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="https://riazcse.blogspot.com/" target="_blank">
-                    <img src="my_pic.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Md. Riazul Islam</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="ion-ios-clock-outline"></span> 10 min
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="https://riazcse.blogspot.com/" target="_blank"><img src="./resource/Capture.JPG" alt=""
-                    class="img-fluid"></a>
-              </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">Blockchain</h6>
-                  </div>
-                </div>
-                <h3 class="card-title"><a href="https://riazcse.blogspot.com/" target="_blank">Click Here To See
-                    more</a></h3>
-                <p class="card-description">
-                  Blockchain is a latest Technology.It related to cryptocurrency and Bitcoin.It is more secure.
+      </section>
 
-                </p>
-              </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="##">
-                    <img src="my_pic.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Md. Riazul Islam</span>
-                  </a>
-                </div>
-                <div class="post-date">
-                  <span class="ion-ios-clock-outline"></span> 10 min
-                </div>
-              </div>
-            </div>
+      <!-- ============ BLOG ============ -->
+      <section class="section" id="blog">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Writing</span>
+            <h2>From the Blog</h2>
+            <p>
+              Notes on programming, problem solving and the things I learn along
+              the way.
+            </p>
+            <div class="sec-line"></div>
           </div>
-          <div class="col-md-4">
-            <div class="card card-blog">
-              <div class="card-img">
-                <a href="https://riazcse.blogspot.com/" target="_blank"><img src="./resource/Capture6.JPG" alt=""
-                    class="img-fluid"></a>
+
+          <div class="blog-grid">
+            <article class="blog-card reveal">
+              <div class="b-media" style="--g1: #7c3aed; --g2: #22d3ee">
+                <i class="fa-solid fa-microchip"></i>
+                <img
+                  src="./resource/Capture5.JPG"
+                  alt="Computer Engineering"
+                  onerror="this.remove()"
+                />
+                <span class="b-tag">Computer Engineering</span>
               </div>
-              <div class="card-body">
-                <div class="card-category-box">
-                  <div class="card-category">
-                    <h6 class="category">Laravel Problem Solution</h6>
+              <div class="b-body">
+                <h3>
+                  <a
+                    href="https://riazcse.blogspot.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Why Computer Science Powers Every Industry</a
+                  >
+                </h3>
+                <p>
+                  From medicine to transport, computing is the quiet engine
+                  behind modern life — here's how to get started.
+                </p>
+                <div class="b-foot">
+                  <div class="b-author">
+                    <img src="my_pic.jpg" alt="" onerror="this.remove()" /><span
+                      >Md. Riazul Islam</span
+                    >
+                  </div>
+                  <div class="b-time">
+                    <i class="fa-regular fa-clock"></i> 10 min
                   </div>
                 </div>
-                <h3 class="card-title"><a href="https://riazcse.blogspot.com/" target="_blank">Click Here To See
-                    more</a></h3>
-                <p class="card-description">
-                  Laravel different types of problems.How to solve this problems.
-                </p>
               </div>
-              <div class="card-footer">
-                <div class="post-author">
-                  <a href="##">
-                    <img src="my_pic.jpg" alt="" class="avatar rounded-circle">
-                    <span class="author">Md. Riazul Islam</span>
-                  </a>
+            </article>
+
+            <article class="blog-card reveal">
+              <div class="b-media" style="--g1: #0ea5e9; --g2: #8b5cf6">
+                <i class="fa-solid fa-cubes"></i>
+                <img
+                  src="./resource/Capture.JPG"
+                  alt="Blockchain"
+                  onerror="this.remove()"
+                />
+                <span class="b-tag">Blockchain</span>
+              </div>
+              <div class="b-body">
+                <h3>
+                  <a
+                    href="https://riazcse.blogspot.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Blockchain Beyond Cryptocurrency</a
+                  >
+                </h3>
+                <p>
+                  Understanding distributed ledgers, why they're secure, and
+                  where they genuinely add value.
+                </p>
+                <div class="b-foot">
+                  <div class="b-author">
+                    <img src="my_pic.jpg" alt="" onerror="this.remove()" /><span
+                      >Md. Riazul Islam</span
+                    >
+                  </div>
+                  <div class="b-time">
+                    <i class="fa-regular fa-clock"></i> 10 min
+                  </div>
                 </div>
-                <div class="post-date">
-                  <span class="ion-ios-clock-outline"></span> 10 min
+              </div>
+            </article>
+
+            <article class="blog-card reveal">
+              <div class="b-media" style="--g1: #f472b6; --g2: #f59e0b">
+                <i class="fa-brands fa-laravel"></i>
+                <img
+                  src="./resource/Capture6.JPG"
+                  alt="Laravel Tips"
+                  onerror="this.remove()"
+                />
+                <span class="b-tag">Laravel</span>
+              </div>
+              <div class="b-body">
+                <h3>
+                  <a
+                    href="https://riazcse.blogspot.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >Laravel Problems &amp; Practical Fixes</a
+                  >
+                </h3>
+                <p>
+                  A running collection of the real-world Laravel issues I've hit
+                  — and the cleanest solutions.
+                </p>
+                <div class="b-foot">
+                  <div class="b-author">
+                    <img src="my_pic.jpg" alt="" onerror="this.remove()" /><span
+                      >Md. Riazul Islam</span
+                    >
+                  </div>
+                  <div class="b-time">
+                    <i class="fa-regular fa-clock"></i> 10 min
+                  </div>
                 </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="section" id="contact">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <span class="eyebrow">Contact</span>
+            <h2>Let's Build Something</h2>
+            <p>
+              Have a project, a role, or just an idea? My inbox is always open.
+            </p>
+            <div class="sec-line"></div>
+          </div>
+
+          <div class="contact-grid">
+            <!-- info -->
+            <div class="contact-card reveal">
+              <h3>Get in Touch</h3>
+              <p>
+                I'm available from 5–8 PM (GMT+6) for calls. Whether it's a full
+                product build, a Laravel rescue mission, or an AI automation
+                idea — let's talk.
+              </p>
+
+              <ul class="c-list">
+                <li>
+                  <div class="c-ico">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <small>Location</small
+                    ><span>19 Sector 14, Uttara, Dhaka, Bangladesh</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="c-ico"><i class="fa-solid fa-phone"></i></div>
+                  <div><small>Phone</small><span>+880 1957-171296</span></div>
+                </li>
+                <li>
+                  <div class="c-ico"><i class="fa-solid fa-envelope"></i></div>
+                  <div>
+                    <small>Email</small><span>riazul.cse.mbstu@gmail.com</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="c-ico"><i class="fa-solid fa-globe"></i></div>
+                  <div>
+                    <small>Website</small><span>www.riazcs.github.io</span>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="socials">
+                <a
+                  href="https://github.com/riazcs"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                  ><i class="fa-brands fa-github"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/riazulcse47/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  ><i class="fa-brands fa-linkedin-in"></i
+                ></a>
+                <a
+                  href="https://www.facebook.com/riazul.islam.cse47"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Facebook"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+                <a
+                  href="https://www.twitter.com/riazulcse47"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Twitter"
+                  ><i class="fa-brands fa-x-twitter"></i
+                ></a>
+                <a
+                  href="https://www.youtube.com/channel/UCDKX6ogaCPXdD3aSGvlkJpQ"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="YouTube"
+                  ><i class="fa-brands fa-youtube"></i
+                ></a>
+              </div>
+
+              <div class="cv-row">
+                <a
+                  href="https://drive.google.com/file/d/1Ov1IlbfQB8Tv_iNNbh6QAZUa8cEtPinb/view?usp=sharing"
+                  download
+                  class="btn btn-primary"
+                  ><i class="fa-solid fa-download"></i> My CV</a
+                >
+                <a
+                  href="https://drive.google.com/file/d/1Ov1IlbfQB8Tv_iNNbh6QAZUa8cEtPinb/view?usp=sharing"
+                  target="_blank"
+                  class="btn btn-ghost"
+                  ><i class="fa-solid fa-file-lines"></i> Bio-Data</a
+                >
               </div>
             </div>
+
+            <!-- form -->
+            <div class="contact-card reveal">
+              <h3>Send a Message</h3>
+              <p>Fill in the form and I'll get back to you within 24 hours.</p>
+
+              <form id="contactForm" novalidate>
+                <div class="f-row">
+                  <div class="field">
+                    <label for="name">Your Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="John Doe"
+                      required
+                    />
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="john@example.com"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="subject">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Project enquiry"
+                  />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Tell me about your project..."
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-inner">
+          <p>
+            © <span id="year"></span> <strong>Md. Riazul Islam</strong> — All
+            rights reserved.
+          </p>
+          <div class="foot-links">
+            <a href="#about">About</a>
+            <a href="#work">Projects</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
           </div>
         </div>
       </div>
-    </section><!-- End Blog Section -->
+    </footer>
 
-    <!-- ======= Contact Section ======= -->
-    <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-mf">
-              <div id="contact" class="box-shadow-full">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        Send Message Me
-                      </h5>
-                    </div>
-                    <div>
-                      <!--add me-->
-                      <div class="more-info">
-                        <p class="lead">
-                          Subscribe <a href="https://www.youtube.com/channel/UCDKX6ogaCPXdD3aSGvlkJpQ"
-                            target="_blank"><strong>MRI Channel</strong></a> Youtube Channel to<br>
-                          watch more videos on web development and Programming Tutorial.</p>
-                        <div class="socials">
-                          <ul>
-                            <li><a href="https://www.facebook.com/riazul.islam.cse47" target="_blank"><span
-                                  class="ico-circle"><i class="ion-social-facebook"></i></span></a></li>
-                            <li><a href="https://www.linkedin.com/in/riazulcse47/" target="_blank"><span
-                                  class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
-                            <li><a href="https://www.twitter.com/riazulcse47" target="_blank"><span
-                                  class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
-                            <li><a href="https://github.com/riazcs" target="_blank"><span class="ico-circle"><i
-                                    class="ion-social-github"></i></span></a></li>
-                            <li><a href="http://techriaz47.wordpress.com/" target="_blank"><span class="ico-circle"><i
-                                    class="ion-social-instagram"></i></span></a></li>
-                          </ul>
-                        </div>
-                        <div class=" button3 button4">
-                          <a href="https://drive.google.com/file/d/1Q6jyMLR0eM6fsH395jwbxSZiWJkRlBQ2/view?usp=sharing"
-                            class="btn primary shine" target="_blank"><i class="fa fa-download"> </i>My CV</a>
-                        </div>
-                        <div class=" button3 button5">
-                          <a href="https://drive.google.com/file/d/1Q6jyMLR0eM6fsH395jwbxSZiWJkRlBQ2/view?usp=sharing"
-                            class="btn primary shine" target="_blank"><i class="fa fa-briefcase"> </i>Bio-Data</a>
-                        </div>
-
-                      </div>
-
-                    </div>
-                  </div>
-
-
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
-                        Get in Touch
-                      </h5>
-                    </div>
-                    <div class="more-info">
-                      <p class="lead">
-                        I am a soft spoken, honest &amp; talented person and have a great sense of humor. I have a good
-                        job, decent
-                        salary. I come from a middle class family. The most important thing in my life is religious
-                        believes, moral
-                        values &amp; respect for elders. I believe in success through hard work &amp; dedication.I am
-                        available from 5-8pm.
-                        Do you want to contact with me?
-                      </p>
-                      <ul class="list-ico">
-                        <li><span class="ion-ios-location"></span>Dhaka, Bangladesh</li>
-                        <li><span class="ion-ios-telephone"></span> 01957171296</li>
-                        <li><span class="ion-email"></span> riazul.cse.mbstu@gmail.com</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            <p class="copyright">© Copyright <strong>Riazul</strong>. All Rights Reserved</p>
-            <div class="credits">
-
-              Designed by <a href="https://www.facebook.com/riazul.islam.cse47" target="_blank">Md. Riazul Islam</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Messenger Chat Plugin Code -->
-    <div id="fb-root"></div>
-
-    <!-- Your Chat Plugin code -->
-    <div id="fb-customer-chat" class="fb-customerchat">
+    <a href="#home" class="to-top" id="toTop" aria-label="Back to top"
+      ><i class="fa-solid fa-arrow-up"></i
+    ></a>
+    <div class="toast" id="toast">
+      Message ready — opening your email client…
     </div>
 
     <script>
-      var chatbox = document.getElementById('fb-customer-chat');
-      chatbox.setAttribute("page_id", "131413824194188");
-      chatbox.setAttribute("attribution", "biz_inbox");
-    </script>
+      /* ============================================================
+   1. TYPING EFFECT
+============================================================ */
+      (function () {
+        const el = document.getElementById("typed");
+        const phrases = [
+          "Full Stack Developer",
+          "Laravel & Vue.js Specialist",
+          "Flutter App Developer",
+          "AI Automation Enthusiast",
+          "Problem Solver",
+        ];
+        let p = 0,
+          c = 0,
+          deleting = false;
 
-    <!-- Your SDK code -->
-    <script>
-      window.fbAsyncInit = function () {
-        FB.init({
-          xfbml: true,
-          version: 'v18.0'
+        function tick() {
+          const word = phrases[p];
+          el.textContent = deleting ? word.slice(0, --c) : word.slice(0, ++c);
+
+          let speed = deleting ? 45 : 85;
+
+          if (!deleting && c === word.length) {
+            speed = 1700;
+            deleting = true;
+          } else if (deleting && c === 0) {
+            deleting = false;
+            p = (p + 1) % phrases.length;
+            speed = 320;
+          }
+          setTimeout(tick, speed);
+        }
+        tick();
+      })();
+
+      /* ============================================================
+   2. NAV — scroll state, mobile toggle, scroll-spy
+============================================================ */
+      const nav = document.getElementById("nav");
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+      const links = document.querySelectorAll(".nav-link");
+
+      navToggle.addEventListener("click", () => {
+        navToggle.classList.toggle("open");
+        navLinks.classList.toggle("open");
+      });
+
+      links.forEach((l) =>
+        l.addEventListener("click", () => {
+          navToggle.classList.remove("open");
+          navLinks.classList.remove("open");
+        }),
+      );
+
+      const sections = [
+        ...document.querySelectorAll("main section, header.hero"),
+      ];
+
+      function onScroll() {
+        const y = window.scrollY;
+
+        // nav background
+        nav.classList.toggle("scrolled", y > 30);
+
+        // progress bar
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        document.getElementById("progressBar").style.width =
+          (h > 0 ? (y / h) * 100 : 0) + "%";
+
+        // back to top
+        document.getElementById("toTop").classList.toggle("show", y > 600);
+
+        // scroll spy
+        let current = "home";
+        sections.forEach((sec) => {
+          if (y >= sec.offsetTop - 140) current = sec.id;
         });
-      };
+        links.forEach((l) => {
+          l.classList.toggle(
+            "active",
+            l.getAttribute("href") === "#" + current,
+          );
+        });
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
 
-      (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+      /* ============================================================
+   3. REVEAL ON SCROLL (+ stagger)
+============================================================ */
+      const revealEls = document.querySelectorAll(".reveal");
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+      );
+
+      revealEls.forEach((el) => {
+        const siblings = [...el.parentElement.children].filter((c) =>
+          c.classList.contains("reveal"),
+        );
+        el.style.transitionDelay = (siblings.indexOf(el) % 4) * 90 + "ms";
+        io.observe(el);
+      });
+
+      /* ============================================================
+   4. ANIMATED COUNTERS
+============================================================ */
+      function animateCounter(el) {
+        const target = parseFloat(el.dataset.target);
+        const suffix = el.dataset.suffix || "";
+        const duration = 1600;
+        const start = performance.now();
+
+        function step(now) {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+          el.textContent = Math.round(target * eased) + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              animateCounter(e.target);
+              counterObserver.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.6 },
+      );
+
+      document
+        .querySelectorAll(".counter")
+        .forEach((c) => counterObserver.observe(c));
+
+      /* ============================================================
+   5. CONTACT FORM  (mailto fallback)
+============================================================ */
+      const form = document.getElementById("contactForm");
+      const toast = document.getElementById("toast");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const subject = form.subject.value.trim() || "Project enquiry";
+        const message = form.message.value.trim();
+
+        if (!name || !email || !message) {
+          toast.textContent = "Please fill in your name, email and message.";
+          toast.classList.add("show");
+          setTimeout(() => toast.classList.remove("show"), 3000);
+          return;
+        }
+
+        const body = `Hi Riazul,%0D%0A%0D%0A${encodeURIComponent(message)}%0D%0A%0D%0A—%0D%0A${encodeURIComponent(name)}%0D%0A${encodeURIComponent(email)}`;
+        window.location.href = `mailto:riazul.cse.mbstu@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+        toast.textContent = "Thanks! Opening your email client…";
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 3600);
+        form.reset();
+      });
+
+      /* ============================================================
+   6. MISC
+============================================================ */
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // close mobile menu on resize to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 820) {
+          navToggle.classList.remove("open");
+          navLinks.classList.remove("open");
+        }
+      });
     </script>
-  </footer><!-- End  Footer -->
-
-  <a href="##" class="back-to-top" style="display: inline;"><i class="fa fa-chevron-up"></i></a>
-
-
-  <!-- Vendor JS Files -->
-  <script src="./resource/jquery.min.js.download"></script>
-  <script src="./resource/bootstrap.bundle.min.js.download"></script>
-  <script src="./resource/jquery.easing.min.js.download"></script>
-  <script src="./resource/validate.js.download"></script>
-  <script src="./resource/jquery.waypoints.min.js.download"></script>
-  <script src="./resource/jquery.counterup.min.js.download"></script>
-  <script src="./resource/owl.carousel.min.js.download"></script>
-  <script src="./resource/typed.min.js.download"></script>
-  <script src="./resource/venobox.min.js.download"></script>
-
-  <!--sweetalert-->
-
-
-  <!-- Template Main JS File -->
-  <script src="./resource/main.js.download"></script>
-  <style type="text/css" data-typed-js-css="true">
-    .typed-cursor {
-      opacity: 1;
-    }
-
-    .typed-cursor.typed-cursor--blink {
-      animation: typedjsBlink 0.7s infinite;
-      -webkit-animation: typedjsBlink 0.7s infinite;
-      animation: typedjsBlink 0.7s infinite;
-    }
-
-    @keyframes typedjsBlink {
-      50% {
-        opacity: 0.0;
-      }
-    }
-
-    @-webkit-keyframes typedjsBlink {
-      0% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-  </style>
-
-</body>
-
+  </body>
 </html>
